@@ -3,6 +3,7 @@ all:
 	-database "${MYSQL_DSN}" up
 
 all-docker: 
+	ls -lR /app/migrations
 	sleep 10
 	./.bin/migrate -source file:///app/migrations/mysql -database "${MYSQL_DSN}" up
 
